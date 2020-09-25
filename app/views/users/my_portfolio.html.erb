@@ -1,4 +1,20 @@
 <div class="container">
+  <div class="search-area">
+    <h3>Search Stocks</h3>
+    <%= form_tag '#', method: :get do %>
+      <div class="form-group row">
+        <div class="col-sm-9">
+        <%= text_field_tag :stock, params[:stock], placeholder: 'Stock', autofocus: true, class: ''%>
+        </div>
+        <div class="col-sm-3">
+          <%= button_tag type: :submit, class: 'btn btn-success' do %>
+            <%= Search %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <div class="row pt-5 m-auto">
     <div class="col-md-6 col-lg-4 pb-3">
       <div class="card card-custom bg-white border-white border-0">
