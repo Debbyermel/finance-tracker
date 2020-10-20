@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-9">  
+  <div class="col-9">
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -29,6 +29,10 @@
                     <% end %>
                   </span>
                 <% end %>
+              <% if current_user.id == @user.id %>
+                <%= link_to 'Remove', user_stock_path(stock), method: :delete, data: {confirm: 'Are you sure?'},
+                                          class: 'btn btn-sm btn-warning' %>
+              <% end %>
             </td>
           </tr>
         <% end %>
